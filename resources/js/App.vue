@@ -1,9 +1,9 @@
 <template>
-    <section class="flex flex-col h-screen bg-gray-900">
-        yo
-    </section>
+  <div>
+    <BasicFileReader/>
+  </div>
 </template>
 
 <script setup>
-
+import BasicFileReader from '@/components/BasicFileReader.vue';
 </script>
