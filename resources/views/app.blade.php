@@ -13,7 +13,7 @@
     @vite('resources/js/main.js')
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-slate-900 w-full h-screen">
     <div id="app"></div>
 </body>
 
