@@ -18,4 +18,8 @@
 
 <script setup>
 import BasicFileReader from '@/components/BasicFileReader.vue';
+
+import { useAppStore } from '@/stores/app';
+
+const store = useAppStore()
 </script>

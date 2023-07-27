@@ -1,27 +1,27 @@
 <template>
     <div>
-      <h1>File Reader</h1>
-      <input type="file" @change="handleFileChange">
-      <pre>{{ fileContent }}</pre>
+        <h1>File Reader</h1>
+        <input type="file" @change="handleFileChange">
+        <pre>{{ store.css }}</pre>
     </div>
-  </template>
+</template>
 
-  <script setup>
-  import { ref } from 'vue';
+<script setup>
+import { useAppStore } from '@/stores/app';
 
-  const fileContent = ref('');
+const store = useAppStore()
 
-  const handleFileChange = (event) => {
+const handleFileChange = (event) => {
     const file = event.target.files[0];
 
     if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        fileContent.value = reader.result;
-      };
-      reader.readAsText(file);
+        const reader = new FileReader();
+        reader.onload = () => {
+            store.css = reader.result;
+        };
+        reader.readAsText(file);
     } else {
-      fileContent.value = "No file selected.";
+        store.css = "No file selected.";
     }
-  };
-  </script>
+};
+</script>

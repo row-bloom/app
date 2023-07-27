@@ -3,7 +3,7 @@ import "../css/app.css";
 
 import { createApp } from "vue";
 
-// import { createPinia } from "pinia";
+import { createPinia } from "pinia";
 
 import App from "@/App.vue";
 
@@ -11,5 +11,5 @@ import App from "@/App.vue";
 
 createApp(App)
     // .use(router)
-    // .use(createPinia())
+    .use(createPinia())
     .mount("#app");
