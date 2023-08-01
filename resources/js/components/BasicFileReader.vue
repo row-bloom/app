@@ -1,15 +1,15 @@
 <template>
     <div>
         <h1>File Reader</h1>
-        <input type="file" @change="handleFileChange">
+        <input type="file" @change="handleFileChange" />
         <pre>{{ store.css }}</pre>
     </div>
 </template>
 
 <script setup>
-import { useAppStore } from '@/stores/app';
+import { useAppStore } from "@/stores/app";
 
-const store = useAppStore()
+const store = useAppStore();
 
 const handleFileChange = (event) => {
     const file = event.target.files[0];

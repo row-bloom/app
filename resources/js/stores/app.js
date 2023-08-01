@@ -1,20 +1,26 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+
+import { computed, ref } from "vue";
 
 export const useAppStore = defineStore("app", () => {
     const css = ref("");
-    // const name = ref('Eduardo')
+    const cssCopy = computed(() => css.value);
+    const setCss = (newCss) => {
+        css.value = newCss;
+    };
 
-    // const doubleCount = computed(() => count.value * 2)
-
-    // function increment() {
-    //   count.value++
-    // }
+    const template = ref("");
+    const templateCopy = computed(() => template.value);
+    const setTemplate = (newTemplate) => {
+        template.value = newTemplate;
+    };
 
     return {
         css,
-        // name,
-        // doubleCount,
-        // increment
+        cssCopy,
+        setCss,
+        template,
+        templateCopy,
+        setTemplate,
     };
 });
