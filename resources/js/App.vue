@@ -1,8 +1,17 @@
 <template>
     <div class="grid h-screen grid-cols-8 overflow-hidden bg-slate-800">
-        <div
-            class="h-screen col-span-4 overflow-hidden border border-gray-300"
-        ></div>
+        <div class="h-screen col-span-4 overflow-hidden border border-gray-300">
+            <form @submit.prevent="render">
+                <button
+                    type="submit"
+                    class="p-2 font-bold bg-gray-300 rounded-full text-slate-950"
+                >
+                    render
+                </button>
+
+                <RenderingOptions />
+            </form>
+        </div>
         <div
             class="flex flex-col col-span-4 overflow-hidden border border-gray-300 grow-0 shrink basis-full"
         >
@@ -25,6 +34,20 @@
 </template>
 
 <script setup>
+import axios from "axios";
+
+import { useAppStore } from "@/stores/app.js";
 import HtmlEditor from "@/components/HtmlEditor.vue";
 import CssEditor from "@/components/CssEditor.vue";
+import RenderingOptions from "@/components/RenderingOptions.vue";
+
+const appStore = useAppStore();
+
+function render() {
+    axios.post("/api/render", {
+        css: appStore.css,
+        template: appStore.template,
+        options: appStore.renderingOptions,
+    });
+}
 </script>

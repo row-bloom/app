@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import { computed, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 
 export const useAppStore = defineStore("app", () => {
     const css = ref("");
@@ -15,6 +15,25 @@ export const useAppStore = defineStore("app", () => {
         template.value = newTemplate;
     };
 
+    const renderingOptions = reactive({
+        displayHeaderFooter: true,
+        rawHeader: null,
+        rawFooter: null,
+        printBackground: false,
+        preferCSSPageSize: false,
+        perPage: 1,
+        landscape: false,
+        format: null,
+        width: null,
+        height: null,
+        margin: "1 in",
+        metadataTitle: null,
+        metadataAuthor: null,
+        metadataCreator: null,
+        metadataSubject: null,
+        metadataKeywords: null,
+    });
+
     return {
         css,
         cssCopy,
@@ -22,5 +41,6 @@ export const useAppStore = defineStore("app", () => {
         template,
         templateCopy,
         setTemplate,
+        renderingOptions,
     };
 });
