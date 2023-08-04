@@ -1,9 +1,9 @@
 <?php
 
 use ElaborateCode\RowBloom\DataCollectors\DataCollectorFactory;
-use ElaborateCode\RowBloom\RowBloom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 Route::post('/render', function (Request $request) {
     return $request->all();
@@ -14,23 +14,22 @@ Route::post('/parse-table', function (Request $request) {
         'table' => ['required', 'file'],
     ]);
 
-    $tableFile = $request->file('table');
+    $tmpFile = $request->file('table');
 
-    $newName = time().'.'.$tableFile->getClientOriginalExtension();
+    $storedName = time().'.'.$tmpFile->getClientOriginalExtension();
 
-    $tableFile->storeAs(
+    $tmpFile->storeAs(
         '',
-        $newName,
+        $storedName,
         'local'
     );
 
-    /** @var RowBloom */
-    $r = app()->get(RowBloom::class);
+    $table = app()->get(DataCollectorFactory::class)
+        ->makeFromPath(storage_path('app/'.$storedName))
+        ->getTable(storage_path('app/'.$storedName))
+        ->toArray();
 
-    /** @var DataCollectorFactory */
-    $rdcf = app()->get(DataCollectorFactory::class);
+    Storage::disk('local')->delete($storedName);
 
-    $dc = $rdcf->makeFromPath(storage_path('app/'.$newName));
-
-    return $dc->getTable(storage_path('app/'.$newName))->toArray();
+    return $table;
 });
