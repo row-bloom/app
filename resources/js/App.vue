@@ -8,11 +8,11 @@
                 >
                     render
                 </button>
-
-                <RenderingOptions />
-                <hr />
-                <ParseTable />
             </form>
+            <hr />
+            <RenderingOptions />
+            <hr />
+            <ParseTable />
         </div>
         <div
             class="flex flex-col col-span-4 overflow-hidden border border-gray-300 grow-0 shrink basis-full"

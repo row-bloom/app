@@ -1,19 +1,31 @@
 <template>
-    <form @submit.prevent="parse">
-        <label for="table">Table</label>
-        <input type="file" ref="fileInput" name="table" />
-        <button
-            type="submit"
-            class="p-2 font-bold bg-gray-300 rounded-full text-slate-950"
-        >
-            parse
-        </button>
-    </form>
+    <div>
+        <form @submit.prevent="parse">
+            <label for="table">Table</label>
+            <input type="file" ref="fileInput" name="table" />
+            <button
+                type="submit"
+                class="p-2 font-bold bg-gray-300 rounded-full text-slate-950"
+            >
+                parse
+            </button>
+        </form>
+
+        <div class="overflow-y-auto max-h-96">
+            <vue-json-pretty :data="appStore.table" />
+        </div>
+    </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import VueJsonPretty from "vue-json-pretty";
+import "vue-json-pretty/lib/styles.css";
+
+import { useAppStore } from "@/stores/app";
+
+const appStore = useAppStore();
 
 const fileInput = ref(null);
 
@@ -26,11 +38,10 @@ function parse() {
         axios
             .post("/api/parse-table", formData)
             .then((response) => {
-                // Handle the response from the server if needed
                 console.table(response.data);
+                appStore.appendToTable(response.data);
             })
             .catch((error) => {
-                // Handle errors if any
                 console.error(error);
             });
     } else {

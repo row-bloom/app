@@ -34,6 +34,16 @@ export const useAppStore = defineStore("app", () => {
         metadataKeywords: null,
     });
 
+    const table = reactive({
+        total: 0,
+        data: [],
+    });
+
+    function appendToTable(data) {
+        table.data = [...table.data, ...data];
+        table.total = table.data.length;
+    }
+
     return {
         css,
         cssCopy,
@@ -42,5 +52,7 @@ export const useAppStore = defineStore("app", () => {
         templateCopy,
         setTemplate,
         renderingOptions,
+        table,
+        appendToTable,
     };
 });
