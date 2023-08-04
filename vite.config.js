@@ -9,6 +9,11 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./resources/js"),
         },
     },
+    server: {
+        watch: {
+          ignored: ["**/vendor/**", "**.php"],
+        },
+      },
     plugins: [
         laravel({
             input: "resources/js/main.js",
