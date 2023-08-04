@@ -10,6 +10,8 @@
                 </button>
 
                 <RenderingOptions />
+                <hr />
+                <ParseTable />
             </form>
         </div>
         <div
@@ -40,6 +42,7 @@ import { useAppStore } from "@/stores/app.js";
 import HtmlEditor from "@/components/HtmlEditor.vue";
 import CssEditor from "@/components/CssEditor.vue";
 import RenderingOptions from "@/components/RenderingOptions.vue";
+import ParseTable from "./components/ParseTable.Vue";
 
 const appStore = useAppStore();
 
