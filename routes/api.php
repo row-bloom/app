@@ -4,10 +4,27 @@ use ElaborateCode\RowBloom\DataCollectors\DataCollectorFactory;
 use ElaborateCode\RowBloom\Interpolators\Interpolator;
 use ElaborateCode\RowBloom\Renderers\Renderer;
 use ElaborateCode\RowBloom\RowBloom;
+use ElaborateCode\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+
+Route::get('/support', function () {
+    /** @var Support */
+    $support = app()->get(Support::class);
+
+    return [
+        'dataCollectorDrivers' => array_keys($support->getDataCollectorDrivers()),
+        'interpolatorDrivers' => array_keys($support->getInterpolatorDrivers()),
+        'rendererDrivers' => array_keys($support->getRendererDrivers()),
+        'supportedTableFileExtensions' => $support->getSupportedTableFileExtensions(),
+        'rendererOptionsSupport' => array_map(
+            fn ($driverName) => $support->getRendererOptionsSupport($driverName),
+            $support->getRendererDrivers()
+        ),
+    ];
+});
 
 Route::post('/render', function (Request $request) {
     $request->validate([
@@ -33,7 +50,7 @@ Route::post('/render', function (Request $request) {
 
     $headers = [
         'Content-Type' => 'application/pdf',
-        'Content-Disposition' => 'inline; filename="document.pdf"'
+        'Content-Disposition' => 'inline; filename="document.pdf"',
     ];
 
     return Response::make($r->get(), 200, $headers);
