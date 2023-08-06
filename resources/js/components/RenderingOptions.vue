@@ -1,6 +1,33 @@
 <template>
     <form>
         <div>
+            <label for="interpolator">interpolator</label>
+            <select name="interpolator" v-model="appStore.interpolatorDriver">
+                <option
+                    v-for="interpolator in supportStore.interpolatorDrivers
+                        .value"
+                    :key="interpolator"
+                    :value="interpolator"
+                >
+                    {{ interpolator }}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <label for="renderer">renderer</label>
+            <select name="renderer" v-model="appStore.rendererDriver">
+                <option
+                    v-for="renderer in supportStore.rendererDrivers.value"
+                    :key="renderer"
+                    :value="renderer"
+                >
+                    {{ renderer }}
+                </option>
+            </select>
+        </div>
+
+        <div>
             <label for="displayHeaderFooter">displayHeaderFooter</label>
             <input
                 type="radio"
@@ -150,5 +177,8 @@
 </template>
 <script setup>
 import { useAppStore } from "@/stores/app";
+import useSupportStore from "@/stores/support";
+
 const appStore = useAppStore();
+const supportStore = useSupportStore();
 </script>

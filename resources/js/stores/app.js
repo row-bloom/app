@@ -3,6 +3,9 @@ import { defineStore } from "pinia";
 import { computed, reactive, ref } from "vue";
 
 export const useAppStore = defineStore("app", () => {
+    const interpolatorDriver = ref(null);
+    const rendererDriver = ref(null);
+
     const css = ref("");
     const cssCopy = computed(() => css.value);
     const setCss = (newCss) => {
@@ -45,6 +48,8 @@ export const useAppStore = defineStore("app", () => {
     }
 
     return {
+        interpolatorDriver,
+        rendererDriver,
         css,
         cssCopy,
         setCss,

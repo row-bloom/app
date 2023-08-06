@@ -28,6 +28,8 @@ Route::get('/support', function () {
 
 Route::post('/render', function (Request $request) {
     $request->validate([
+        'interpolatorDriver' => ['required', 'string'],
+        'rendererDriver' => ['required', 'string'],
         'template' => ['required', 'string'],
         'css' => ['required', 'string'],
         'table' => ['required', 'array'],
@@ -37,8 +39,8 @@ Route::post('/render', function (Request $request) {
     /** @var RowBloom */
     $r = app()->get(RowBloom::class);
 
-    $r->setInterpolator(Interpolator::Php)
-        ->setRenderer(Renderer::Mpdf);
+    $r->setInterpolator(app()->get(Support::class)->getInterpolatorDrivers()[$request->interpolatorDriver])
+        ->setRenderer(app()->get(Support::class)->getRendererDrivers()[$request->rendererDriver]);
 
     $r->addTable($request->table);
     $r->setTemplate($request->template);
@@ -58,7 +60,11 @@ Route::post('/render', function (Request $request) {
 
 Route::post('/parse-table', function (Request $request) {
     $request->validate([
-        'table' => ['required', 'file'],
+        'table' => [
+            'required',
+            'file',
+            'mimes:'.implode(',', array_keys(app()->get(Support::class)->getSupportedTableFileExtensions())),
+        ],
     ]);
 
     $tmpFile = $request->file('table');

@@ -18,6 +18,8 @@ const appStore = useAppStore();
 function render() {
     axios
         .post("/api/render", {
+            interpolatorDriver: appStore.interpolatorDriver,
+            rendererDriver: appStore.rendererDriver,
             css: appStore.css,
             template: appStore.template,
             table: appStore.table.data,

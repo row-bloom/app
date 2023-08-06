@@ -34,9 +34,13 @@
 </template>
 
 <script setup>
+import { useAppStore } from "@/stores/app.js";
+import useSupportStore from "@/stores/support.js";
 import HtmlEditor from "@/components/HtmlEditor.vue";
 import CssEditor from "@/components/CssEditor.vue";
 import RenderAction from "@/components/RenderAction.vue";
 import RenderingOptions from "@/components/RenderingOptions.vue";
 import ParseTable from "@/components/ParseTable.Vue";
+
+useSupportStore().init();
 </script>
