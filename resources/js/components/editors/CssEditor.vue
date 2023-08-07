@@ -10,7 +10,7 @@
 import { css } from "@codemirror/lang-css";
 
 import useAppStore from "@/stores/app";
-import BaseEditor from "@/components/BaseEditor.vue";
+import BaseEditor from "@/components/editors/BaseEditor.vue";
 
 const store = useAppStore();
 

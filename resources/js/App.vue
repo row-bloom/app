@@ -35,8 +35,8 @@
 
 <script setup lang="ts">
 import useSupportStore from "@/stores/support";
-import HtmlEditor from "@/components/HtmlEditor.vue";
-import CssEditor from "@/components/CssEditor.vue";
+import HtmlEditor from "@/components/editors/HtmlEditor.vue";
+import CssEditor from "@/components/editors/CssEditor.vue";
 import RenderAction from "@/components/RenderAction.vue";
 import RenderingOptions from "@/components/RenderingOptions.vue";
 import ParseTable from "@/components/ParseTable.vue";
