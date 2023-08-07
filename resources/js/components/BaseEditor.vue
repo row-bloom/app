@@ -11,7 +11,7 @@
     />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { shallowRef, computed } from "vue";
 import { Codemirror } from "vue-codemirror";
 import { oneDark } from "@codemirror/theme-one-dark";
@@ -36,7 +36,7 @@ const extensions = computed(() => [
 ]);
 
 const view = shallowRef();
-const handleReady = (payload) => {
+const handleReady = (payload: any) => {
     view.value = payload.view;
 };
 </script>

@@ -1,13 +1,14 @@
+import axios from "axios";
 import { defineStore } from "pinia";
 import { reactive } from "vue";
 
 const useSupportStore = defineStore("support", () => {
     {
-        const dataCollectorDrivers = reactive([]);
-        const interpolatorDrivers = reactive([]);
-        const rendererDrivers = reactive([]);
-        const supportedTableFileExtensions = reactive({});
-        const rendererOptionsSupport = reactive({});
+        const dataCollectorDrivers = reactive<any>([]);
+        const interpolatorDrivers = reactive<any>([]);
+        const rendererDrivers = reactive<any>([]);
+        const supportedTableFileExtensions = reactive<any>({});
+        const rendererOptionsSupport = reactive<any>({});
 
         function init() {
             axios

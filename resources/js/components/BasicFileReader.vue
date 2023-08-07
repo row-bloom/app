@@ -6,18 +6,18 @@
     </div>
 </template>
 
-<script setup>
-import { useAppStore } from "@/stores/app";
+<script setup lang="ts">
+import useAppStore from "@/stores/app";
 
 const store = useAppStore();
 
-const handleFileChange = (event) => {
+const handleFileChange = (event: any) => {
     const file = event.target.files[0];
 
     if (file) {
         const reader = new FileReader();
         reader.onload = () => {
-            store.css = reader.result;
+            store.css = reader.result!.toString();
         };
         reader.readAsText(file);
     } else {

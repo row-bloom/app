@@ -2,26 +2,26 @@ import { defineStore } from "pinia";
 
 import { computed, reactive, ref } from "vue";
 
-export const useAppStore = defineStore("app", () => {
+const useAppStore = defineStore("app", () => {
     const interpolatorDriver = ref(null);
     const rendererDriver = ref(null);
 
     const css = ref("");
     const cssCopy = computed(() => css.value);
-    const setCss = (newCss) => {
+    const setCss = (newCss: string) => {
         css.value = newCss;
     };
 
     const template = ref("");
     const templateCopy = computed(() => template.value);
-    const setTemplate = (newTemplate) => {
+    const setTemplate = (newTemplate: string) => {
         template.value = newTemplate;
     };
 
     const renderingOptions = reactive({
         displayHeaderFooter: true,
-        rawHeader: null,
-        rawFooter: null,
+        rawHeader: "",
+        rawFooter: "",
         printBackground: false,
         preferCSSPageSize: false,
         perPage: 1,
@@ -37,13 +37,18 @@ export const useAppStore = defineStore("app", () => {
         metadataKeywords: null,
     });
 
-    const table = reactive({
+    const table = reactive<{
+        total: number;
+        data: any;
+    }>({
         total: 0,
         data: [],
     });
 
-    function appendToTable(data) {
-        table.data = [...table.data, ...data];
+    function appendToTable(data: any) {
+        const dataArray = Array.isArray(data) ? data : [data];
+
+        table.data = [...table.data, ...dataArray];
         table.total = table.data.length;
     }
 
@@ -61,3 +66,5 @@ export const useAppStore = defineStore("app", () => {
         appendToTable,
     };
 });
+
+export default useAppStore;

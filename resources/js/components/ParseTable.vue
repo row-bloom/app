@@ -17,20 +17,20 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import axios from "axios";
 import VueJsonPretty from "vue-json-pretty";
 import "vue-json-pretty/lib/styles.css";
 
-import { useAppStore } from "@/stores/app";
+import useAppStore from "@/stores/app";
 
 const appStore = useAppStore();
 
-const fileInput = ref(null);
+const fileInput = ref<HTMLInputElement | null>(null);
 
 function parse() {
-    const file = fileInput.value.files[0];
+    const file = fileInput.value?.files?.[0];
     if (file) {
         const formData = new FormData();
         formData.append("table", file);

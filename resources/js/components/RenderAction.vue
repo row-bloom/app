@@ -8,10 +8,10 @@
         </button>
     </form>
 </template>
-<script setup>
+<script setup lang="ts">
 import axios from "axios";
 
-import { useAppStore } from "@/stores/app.js";
+import useAppStore from "@/stores/app.js";
 
 const appStore = useAppStore();
 

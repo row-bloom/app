@@ -6,10 +6,10 @@
     />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { css } from "@codemirror/lang-css";
 
-import { useAppStore } from "@/stores/app";
+import useAppStore from "@/stores/app";
 import BaseEditor from "@/components/BaseEditor.vue";
 
 const store = useAppStore();

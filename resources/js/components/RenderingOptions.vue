@@ -175,8 +175,8 @@
         </div>
     </form>
 </template>
-<script setup>
-import { useAppStore } from "@/stores/app";
+<script setup lang="ts">
+import useAppStore from "@/stores/app";
 import useSupportStore from "@/stores/support";
 
 const appStore = useAppStore();
