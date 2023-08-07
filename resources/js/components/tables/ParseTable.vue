@@ -38,7 +38,6 @@ function parse() {
         axios
             .post("/api/read-table-content", formData)
             .then((response) => {
-                console.table(response.data);
                 appStore.appendToTable(response.data);
             })
             .catch((error) => {
