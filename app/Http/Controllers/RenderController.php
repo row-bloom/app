@@ -42,11 +42,13 @@ class RenderController
             $rowBloom->setOption($option, $value);
         }
 
-        $headers = [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="document.pdf"',
-        ];
-
-        return Response::make($rowBloom->get(), 200, $headers);
+        return Response::make(
+            $rowBloom->get(),
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="document.pdf"',
+            ]
+        );
     }
 }
