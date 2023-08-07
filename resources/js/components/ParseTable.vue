@@ -36,7 +36,7 @@ function parse() {
         formData.append("table", file);
 
         axios
-            .post("/api/parse-table", formData)
+            .post("/api/read-table-content", formData)
             .then((response) => {
                 console.table(response.data);
                 appStore.appendToTable(response.data);
