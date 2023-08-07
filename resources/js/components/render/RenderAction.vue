@@ -11,19 +11,19 @@
 <script setup lang="ts">
 import axios from "axios";
 
-import useAppStore from "@/stores/app.js";
+import useRenderStore from "@/stores/render";
 
-const appStore = useAppStore();
+const renderStore = useRenderStore();
 
 function render() {
     axios
         .post("/api/render", {
-            interpolatorDriver: appStore.interpolatorDriver,
-            rendererDriver: appStore.rendererDriver,
-            css: appStore.css,
-            template: appStore.template,
-            table: appStore.table.data,
-            options: appStore.renderingOptions,
+            interpolatorDriver: renderStore.interpolatorDriver,
+            rendererDriver: renderStore.rendererDriver,
+            css: renderStore.css,
+            template: renderStore.template,
+            table: renderStore.table.data,
+            options: renderStore.renderingOptions,
         })
         .then((response) => {
             // Assuming the response contains the base64 encoded PDF content

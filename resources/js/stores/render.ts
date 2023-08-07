@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 import { computed, reactive, ref } from "vue";
 
-const useAppStore = defineStore("app", () => {
+const useRenderStore = defineStore("render", () => {
     const interpolatorDriver = ref(null);
     const rendererDriver = ref(null);
 
@@ -67,4 +67,4 @@ const useAppStore = defineStore("app", () => {
     };
 });
 
-export default useAppStore;
+export default useRenderStore;

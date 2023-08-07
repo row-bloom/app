@@ -1,18 +1,18 @@
 <template>
     <base-editor
         :additional-extensions="[html()]"
-        :code="store.templateCopy"
-        @change="store.setTemplate($event)"
+        :code="renderStore.templateCopy"
+        @change="renderStore.setTemplate($event)"
     />
 </template>
 
 <script setup lang="ts">
 import { html } from "@codemirror/lang-html";
 
-import useAppStore from "@/stores/app";
+import useRenderStore from "@/stores/render";
 import BaseEditor from "@/components/editors/BaseEditor.vue";
 
-const store = useAppStore();
+const renderStore = useRenderStore();
 
-store.setTemplate("<h1>template</h1>");
+renderStore.setTemplate("<h1>template</h1>");
 </script>

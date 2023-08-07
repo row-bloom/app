@@ -12,7 +12,7 @@
         </form>
 
         <div class="overflow-y-auto max-h-96">
-            <vue-json-pretty :data="appStore.table" />
+            <vue-json-pretty :data="renderStore.table" />
         </div>
     </div>
 </template>
@@ -23,9 +23,9 @@ import axios from "axios";
 import VueJsonPretty from "vue-json-pretty";
 import "vue-json-pretty/lib/styles.css";
 
-import useAppStore from "@/stores/app";
+import useRenderStore from "@/stores/render";
 
-const appStore = useAppStore();
+const renderStore = useRenderStore();
 
 const fileInput = ref<HTMLInputElement | null>(null);
 
@@ -38,7 +38,7 @@ function parse() {
         axios
             .post("/api/read-table-content", formData)
             .then((response) => {
-                appStore.appendToTable(response.data);
+                renderStore.appendToTable(response.data);
             })
             .catch((error) => {
                 console.error(error);

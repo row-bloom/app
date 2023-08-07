@@ -2,7 +2,10 @@
     <form>
         <div>
             <label for="interpolator">interpolator</label>
-            <select name="interpolator" v-model="appStore.interpolatorDriver">
+            <select
+                name="interpolator"
+                v-model="renderStore.interpolatorDriver"
+            >
                 <option
                     v-for="interpolator in supportStore.interpolatorDrivers
                         .value"
@@ -16,7 +19,7 @@
 
         <div>
             <label for="renderer">renderer</label>
-            <select name="renderer" v-model="appStore.rendererDriver">
+            <select name="renderer" v-model="renderStore.rendererDriver">
                 <option
                     v-for="renderer in supportStore.rendererDrivers.value"
                     :key="renderer"
@@ -32,13 +35,13 @@
             <input
                 type="radio"
                 name="displayHeaderFooter"
-                v-model="appStore.renderingOptions.displayHeaderFooter"
+                v-model="renderStore.renderingOptions.displayHeaderFooter"
                 :value="true"
             />
             <input
                 type="radio"
                 name="displayHeaderFooter"
-                v-model="appStore.renderingOptions.displayHeaderFooter"
+                v-model="renderStore.renderingOptions.displayHeaderFooter"
                 :value="false"
             />
         </div>
@@ -47,7 +50,7 @@
             <label for="rawHeader">rawHeader</label>
             <textarea
                 name="rawHeader"
-                v-model="appStore.renderingOptions.rawHeader"
+                v-model="renderStore.renderingOptions.rawHeader"
             ></textarea>
         </div>
 
@@ -55,7 +58,7 @@
             <label for="rawFooter">rawFooter</label>
             <textarea
                 name="rawFooter"
-                v-model="appStore.renderingOptions.rawFooter"
+                v-model="renderStore.renderingOptions.rawFooter"
             ></textarea>
         </div>
 
@@ -64,13 +67,13 @@
             <input
                 type="radio"
                 name="printBackground"
-                v-model="appStore.renderingOptions.printBackground"
+                v-model="renderStore.renderingOptions.printBackground"
                 :value="true"
             />
             <input
                 type="radio"
                 name="printBackground"
-                v-model="appStore.renderingOptions.printBackground"
+                v-model="renderStore.renderingOptions.printBackground"
                 :value="false"
             />
         </div>
@@ -80,13 +83,13 @@
             <input
                 type="radio"
                 name="preferCSSPageSize"
-                v-model="appStore.renderingOptions.preferCSSPageSize"
+                v-model="renderStore.renderingOptions.preferCSSPageSize"
                 :value="true"
             />
             <input
                 type="radio"
                 name="preferCSSPageSize"
-                v-model="appStore.renderingOptions.preferCSSPageSize"
+                v-model="renderStore.renderingOptions.preferCSSPageSize"
                 :value="false"
             />
         </div>
@@ -96,7 +99,7 @@
             <input
                 type="number"
                 name="perPage"
-                v-model="appStore.renderingOptions.perPage"
+                v-model="renderStore.renderingOptions.perPage"
             />
         </div>
 
@@ -105,13 +108,13 @@
             <input
                 type="radio"
                 name="landscape"
-                v-model="appStore.renderingOptions.landscape"
+                v-model="renderStore.renderingOptions.landscape"
                 :value="true"
             />
             <input
                 type="radio"
                 name="landscape"
-                v-model="appStore.renderingOptions.landscape"
+                v-model="renderStore.renderingOptions.landscape"
                 :value="false"
             />
         </div>
@@ -125,7 +128,7 @@
             <input
                 type="text"
                 name="margin"
-                v-model="appStore.renderingOptions.margin"
+                v-model="renderStore.renderingOptions.margin"
             />
         </div>
 
@@ -134,7 +137,7 @@
             <input
                 type="text"
                 name="metadataTitle"
-                v-model="appStore.renderingOptions.metadataTitle"
+                v-model="renderStore.renderingOptions.metadataTitle"
             />
         </div>
 
@@ -143,7 +146,7 @@
             <input
                 type="text"
                 name="metadataAuthor"
-                v-model="appStore.renderingOptions.metadataAuthor"
+                v-model="renderStore.renderingOptions.metadataAuthor"
             />
         </div>
 
@@ -152,7 +155,7 @@
             <input
                 type="text"
                 name="metadataCreator"
-                v-model="appStore.renderingOptions.metadataCreator"
+                v-model="renderStore.renderingOptions.metadataCreator"
             />
         </div>
 
@@ -161,7 +164,7 @@
             <input
                 type="text"
                 name="metadataSubject"
-                v-model="appStore.renderingOptions.metadataSubject"
+                v-model="renderStore.renderingOptions.metadataSubject"
             />
         </div>
 
@@ -170,15 +173,15 @@
             <input
                 type="text"
                 name="metadataKeywords"
-                v-model="appStore.renderingOptions.metadataKeywords"
+                v-model="renderStore.renderingOptions.metadataKeywords"
             />
         </div>
     </form>
 </template>
 <script setup lang="ts">
-import useAppStore from "@/stores/app";
+import useRenderStore from "@/stores/render";
 import useSupportStore from "@/stores/support";
 
-const appStore = useAppStore();
+const renderStore = useRenderStore();
 const supportStore = useSupportStore();
 </script>
