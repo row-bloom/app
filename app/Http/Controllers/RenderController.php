@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Validation\Rule;
+use RowBloom\RowBloom\Config;
 
 class RenderController
 {
@@ -30,6 +31,10 @@ class RenderController
             'table.*' => ['required', 'array'],
             'options' => ['required', 'array'],
         ]);
+
+        $config = (new Config)->setChromePath('C:\Program Files\Google\Chrome\Application\Chrome.exe');
+
+        $rowBloom->setConfig($config);
 
         $rowBloom->setInterpolator($support->getInterpolatorDrivers()[$request->interpolatorDriver])
             ->setRenderer($support->getRendererDrivers()[$request->rendererDriver]);
