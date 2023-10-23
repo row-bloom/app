@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use ElaborateCode\RowBloom\DataCollectors\DataCollectorFactory;
-use ElaborateCode\RowBloom\Support;
+use RowBloom\RowBloom\DataCollectors\DataCollectorFactory;
+use RowBloom\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

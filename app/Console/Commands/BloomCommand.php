@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use ElaborateCode\RowBloom\Support;
+use RowBloom\RowBloom\Support;
 use Illuminate\Console\Command;
 use function Laravel\Prompts\select;
 use function Laravel\Prompts\text;

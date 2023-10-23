@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use ElaborateCode\RowBloom\Support;
+use RowBloom\RowBloom\Support;
 
 class SupportController
 {

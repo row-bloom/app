@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use ElaborateCode\RowBloom\RowBloom;
-use ElaborateCode\RowBloom\Support;
+use RowBloom\RowBloom\RowBloom;
+use RowBloom\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Response;
