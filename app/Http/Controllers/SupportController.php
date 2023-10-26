@@ -13,9 +13,11 @@ class SupportController
             'interpolatorDrivers' => array_keys($support->getInterpolatorDrivers()),
             'rendererDrivers' => array_keys($support->getRendererDrivers()),
             'supportedTableFileExtensions' => $support->getSupportedTableFileExtensions(),
-            'rendererOptionsSupport' => array_map(
-                fn ($driverName) => $support->getRendererOptionsSupport($driverName),
-                $support->getRendererDrivers()
+            'rendererOptionsSupport' => array_reduce(
+                array_keys($support->getRendererDrivers()),
+                fn(array $carry, string $driverName): array => $carry
+                    + [$driverName => $support->getRendererOptionsSupport($driverName)],
+                []
             ),
         ];
     }
