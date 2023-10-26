@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef914fd9ee4a2e8c89c2899f3742270e",
+    "content-hash": "695b6e23cd6f18c49c5546f16d61057e",
     "packages": [
         {
             "name": "brick/math",
@@ -4076,27 +4076,203 @@
             "time": "2023-04-15T23:01:58+00:00"
         },
         {
-            "name": "row-bloom/row-bloom",
+            "name": "row-bloom/browsershot-renderer",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/row-bloom/row-bloom.git",
-                "reference": "e02490c3336dd98eae0a21983210fba6e551fb97"
+                "url": "https://github.com/row-bloom/browsershot-renderer.git",
+                "reference": "302ff45cd20cb859be2b8f62d54fcdb45520d621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/e02490c3336dd98eae0a21983210fba6e551fb97",
-                "reference": "e02490c3336dd98eae0a21983210fba6e551fb97",
+                "url": "https://api.github.com/repos/row-bloom/browsershot-renderer/zipball/302ff45cd20cb859be2b8f62d54fcdb45520d621",
+                "reference": "302ff45cd20cb859be2b8f62d54fcdb45520d621",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "*",
+                "php": "^8.1",
+                "spatie/browsershot": "^3.58"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "row-bloom/row-bloom": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RowBloom\\BrowsershotRenderer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "medilies",
+                    "email": "medilies.contact@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Table rows to pdf cards",
+            "homepage": "https://github.com/row-bloom/browsershot-renderer",
+            "keywords": [
+                "Rendering",
+                "pdf"
+            ],
+            "support": {
+                "issues": "https://github.com/row-bloom/browsershot-renderer/issues",
+                "source": "https://github.com/row-bloom/browsershot-renderer/tree/main"
+            },
+            "time": "2023-10-26T19:51:51+00:00"
+        },
+        {
+            "name": "row-bloom/chrome-php-renderer",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/row-bloom/chrome-php-renderer.git",
+                "reference": "3d6dd0ef751faf96a0eb9a80b28a44bc284ffa41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/row-bloom/chrome-php-renderer/zipball/3d6dd0ef751faf96a0eb9a80b28a44bc284ffa41",
+                "reference": "3d6dd0ef751faf96a0eb9a80b28a44bc284ffa41",
                 "shasum": ""
             },
             "require": {
                 "chrome-php/chrome": "^1.9",
                 "illuminate/container": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "row-bloom/row-bloom": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RowBloom\\ChromePhpRenderer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "medilies",
+                    "email": "medilies.contact@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "row-bloom renderer driver",
+            "homepage": "https://github.com/row-bloom/chrome-php-renderer",
+            "keywords": [
+                "Rendering",
+                "pdf"
+            ],
+            "support": {
+                "issues": "https://github.com/row-bloom/chrome-php-renderer/issues",
+                "source": "https://github.com/row-bloom/chrome-php-renderer/tree/main"
+            },
+            "time": "2023-10-26T19:52:22+00:00"
+        },
+        {
+            "name": "row-bloom/mpdf-renderer",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/row-bloom/mpdf-renderer.git",
+                "reference": "e033dbb3665d0557b72e7bedd0b656f18781226b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/row-bloom/mpdf-renderer/zipball/e033dbb3665d0557b72e7bedd0b656f18781226b",
+                "reference": "e033dbb3665d0557b72e7bedd0b656f18781226b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "*",
                 "mpdf/mpdf": "^8.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "row-bloom/row-bloom": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RowBloom\\MpdfRenderer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "medilies",
+                    "email": "medilies.contact@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "row-bloom mpdf renderer driver",
+            "homepage": "https://github.com/row-bloom/mpdf-renderer",
+            "keywords": [
+                "Rendering",
+                "pdf"
+            ],
+            "support": {
+                "issues": "https://github.com/row-bloom/mpdf-renderer/issues",
+                "source": "https://github.com/row-bloom/mpdf-renderer/tree/main"
+            },
+            "time": "2023-10-26T19:29:19+00:00"
+        },
+        {
+            "name": "row-bloom/row-bloom",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/row-bloom/row-bloom.git",
+                "reference": "1a35b8f1e03bd6181f25395eabfc4543e3c54cb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/1a35b8f1e03bd6181f25395eabfc4543e3c54cb1",
+                "reference": "1a35b8f1e03bd6181f25395eabfc4543e3c54cb1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "*",
                 "php": "^8.1",
-                "phpoffice/phpspreadsheet": "^1.28",
-                "spatie/browsershot": "^3.58",
-                "twig/twig": "^3.6"
+                "phpoffice/phpspreadsheet": "^1.28"
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
@@ -4138,7 +4314,67 @@
                 "issues": "https://github.com/row-bloom/row-bloom/issues",
                 "source": "https://github.com/row-bloom/row-bloom/tree/main"
             },
-            "time": "2023-10-26T11:11:11+00:00"
+            "time": "2023-10-26T19:10:39+00:00"
+        },
+        {
+            "name": "row-bloom/twig-interpolator",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/row-bloom/twig-interpolator.git",
+                "reference": "43cc5c367496139b0afb7b3c5ab0f4b87bc0d6ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/row-bloom/twig-interpolator/zipball/43cc5c367496139b0afb7b3c5ab0f4b87bc0d6ba",
+                "reference": "43cc5c367496139b0afb7b3c5ab0f4b87bc0d6ba",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "*",
+                "php": "^8.1",
+                "twig/twig": "^3.6"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "row-bloom/row-bloom": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RowBloom\\TwigInterpolator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "medilies",
+                    "email": "medilies.contact@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "row-bloom Twig interpolator driver",
+            "homepage": "https://github.com/row-bloom/",
+            "keywords": [
+                "html",
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/row-bloom/twig-interpolator/issues",
+                "source": "https://github.com/row-bloom/twig-interpolator/tree/v0.1.0-beta"
+            },
+            "time": "2023-10-26T19:20:58+00:00"
         },
         {
             "name": "setasign/fpdi",
@@ -9502,7 +9738,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "row-bloom/row-bloom": 20
+        "row-bloom/browsershot-renderer": 20,
+        "row-bloom/chrome-php-renderer": 20,
+        "row-bloom/mpdf-renderer": 20,
+        "row-bloom/row-bloom": 20,
+        "row-bloom/twig-interpolator": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
