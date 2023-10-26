@@ -3,22 +3,18 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use RowBloom\RowBloom\RowBloomServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        app()->singleton(RowBloomServiceProvider::class);
+        app()->get(RowBloomServiceProvider::class)->register();
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        //
+        app()->get(RowBloomServiceProvider::class)->boot();
     }
 }
