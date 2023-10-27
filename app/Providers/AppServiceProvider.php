@@ -8,6 +8,7 @@ use RowBloom\ChromePhpRenderer\ChromePhpRenderer;
 use RowBloom\MpdfRenderer\MpdfRenderer;
 use RowBloom\RowBloom\RowBloomServiceProvider;
 use RowBloom\RowBloom\Support;
+use RowBloom\SpreadsheetDataLoader\SpreadsheetDataLoader;
 use RowBloom\TwigInterpolator\TwigInterpolator;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
             ->registerRendererDriver(MpdfRenderer::NAME, MpdfRenderer::class);
 
         $support->registerInterpolatorDriver(TwigInterpolator::NAME, TwigInterpolator::class);
+
+        $support->registerDataLoaderDriver(SpreadsheetDataLoader::NAME, SpreadsheetDataLoader::class);
     }
 }

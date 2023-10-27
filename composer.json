@@ -17,6 +17,7 @@
         "row-bloom/chrome-php-renderer": "dev-main",
         "row-bloom/mpdf-renderer": "dev-main",
         "row-bloom/row-bloom": "dev-main",
+        "row-bloom/spreadsheet-data-loader": "dev-main",
         "row-bloom/twig-interpolator": "dev-main"
     },
     "require-dev": {

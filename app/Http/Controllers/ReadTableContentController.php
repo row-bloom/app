@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use RowBloom\RowBloom\DataCollectors\DataCollectorFactory;
+use RowBloom\RowBloom\DataLoaders\DataLoaderFactory;
 use RowBloom\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -29,7 +29,7 @@ class ReadTableContentController
             'local'
         );
 
-        $table = app()->get(DataCollectorFactory::class)
+        $table = app()->get(DataLoaderFactory::class)
             ->makeFromPath(storage_path('app/'.$storedName))
             ->getTable(storage_path('app/'.$storedName))
             ->toArray();

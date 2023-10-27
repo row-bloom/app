@@ -4,7 +4,7 @@ import { reactive } from "vue";
 
 const useSupportStore = defineStore("support", () => {
     {
-        const dataCollectorDrivers = reactive<any>([]);
+        const dataLoaderDrivers = reactive<any>([]);
         const interpolatorDrivers = reactive<any>([]);
         const rendererDrivers = reactive<any>([]);
         const supportedTableFileExtensions = reactive<any>({});
@@ -14,8 +14,8 @@ const useSupportStore = defineStore("support", () => {
             axios
                 .get("/api/support")
                 .then((response) => {
-                    dataCollectorDrivers.value =
-                        response.data.dataCollectorDrivers;
+                    dataLoaderDrivers.value =
+                        response.data.dataLoaderDrivers;
                     interpolatorDrivers.value =
                         response.data.interpolatorDrivers;
                     rendererDrivers.value = response.data.rendererDrivers;
@@ -31,7 +31,7 @@ const useSupportStore = defineStore("support", () => {
 
         return {
             init,
-            dataCollectorDrivers,
+            dataLoaderDrivers,
             interpolatorDrivers,
             rendererDrivers,
             supportedTableFileExtensions,

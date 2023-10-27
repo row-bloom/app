@@ -4,15 +4,15 @@ namespace App\Console\Commands;
 
 use RowBloom\RowBloom\Support;
 use Illuminate\Console\Command;
+
+use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\select;
 use function Laravel\Prompts\text;
 
 class BloomCommand extends Command
 {
-    /** @var string */
     protected $signature = 'bloom';
 
-    /** @var string */
     protected $description = 'Command description'; // TODO
 
     private string $templatePath;
@@ -41,8 +41,12 @@ class BloomCommand extends Command
         $this->promptForInterpolatorDriver();
         $this->promptForRendererDriver();
         $this->promptForRendererOptions();
+        // TODO: config
+
+        // TODO: validation
 
         // TODO: prompt for output path
+        // TODO: (lib) make DTO to map all entries from array to builder
         dump(
             $this->templatePath,
             $this->cssPaths,
@@ -136,10 +140,7 @@ class BloomCommand extends Command
 
     private function promptForBooleanOption(string $name): void
     {
-        $this->options[$name] = select(
-            $name,
-            ['Yes' => 'y', 'No' => 'n']
-        ) === 'Yes' ? true : false;
+        $this->options[$name] = confirm($name);
     }
 
     private function promptForDisplayHeaderFooter(): void
