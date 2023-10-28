@@ -1,6 +1,6 @@
 <template>
     <form
-        class="grid items-center grid-cols-2 p-2 gap-x-1 gap-y-4 justify-items-start"
+        class="grid items-center grid-cols-2 p-2 gap-x-1 gap-y-3 justify-items-start"
     >
         <!-- -------------- -->
 
@@ -38,7 +38,7 @@
 
         <!-- -------------- -->
 
-        <label for="displayHeaderFooter">Display header and footer </label>
+        <label for="displayHeaderFooter">Headers and footers </label>
         <input
             type="checkbox"
             name="displayHeaderFooter"
@@ -61,7 +61,7 @@
 
         <!-- -------------- -->
 
-        <label for="printBackground">printBackground </label>
+        <label for="printBackground">Background graphics </label>
         <input
             type="checkbox"
             name="printBackground"
@@ -79,7 +79,7 @@
 
         <!-- -------------- -->
 
-        <label for="perPage">Rows per page </label>
+        <label for="perPage">Rows before page break </label>
         <input
             type="number"
             name="perPage"
@@ -102,7 +102,7 @@
         <!-- TODO: width -->
         <!-- TODO: height -->
 
-        <label for="margin">Margin </label>
+        <label for="margin">Margins </label>
         <input
             type="text"
             name="margin"
