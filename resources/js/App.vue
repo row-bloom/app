@@ -7,7 +7,7 @@
             <div class="flex-1 h-full border">
                 <CssEditor />
             </div>
-            <div class="h-full border w-80">
+            <div class="h-full border min-w-[320px] max-w-[480px] w-1/3">
                 <RenderingOptions />
             </div>
         </div>

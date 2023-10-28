@@ -1,183 +1,169 @@
 <template>
-    <form>
-        <div>
-            <label for="interpolator">interpolator</label>
-            <select
-                name="interpolator"
-                v-model="renderStore.interpolatorDriver"
+    <form
+        class="grid items-center grid-cols-2 p-2 gap-x-1 gap-y-4 justify-items-start"
+    >
+        <!-- -------------- -->
+
+        <label for="interpolator">Interpolator </label>
+        <select
+            name="interpolator"
+            v-model="renderStore.interpolatorDriver"
+            class="w-full border rounded-md bg-slate-900 border-gray-50"
+        >
+            <option
+                v-for="interpolator in supportStore.interpolatorDrivers.value"
+                :key="interpolator"
+                :value="interpolator"
             >
-                <option
-                    v-for="interpolator in supportStore.interpolatorDrivers
-                        .value"
-                    :key="interpolator"
-                    :value="interpolator"
-                >
-                    {{ interpolator }}
-                </option>
-            </select>
-        </div>
+                {{ interpolator }}
+            </option>
+        </select>
 
-        <div>
-            <label for="renderer">renderer</label>
-            <select name="renderer" v-model="renderStore.rendererDriver">
-                <option
-                    v-for="renderer in supportStore.rendererDrivers.value"
-                    :key="renderer"
-                    :value="renderer"
-                >
-                    {{ renderer }}
-                </option>
-            </select>
-        </div>
+        <!-- -------------- -->
 
-        <div>
-            <label for="displayHeaderFooter">displayHeaderFooter</label>
-            <input
-                type="radio"
-                name="displayHeaderFooter"
-                v-model="renderStore.renderingOptions.displayHeaderFooter"
-                :value="true"
-            />
-            <input
-                type="radio"
-                name="displayHeaderFooter"
-                v-model="renderStore.renderingOptions.displayHeaderFooter"
-                :value="false"
-            />
-        </div>
+        <label for="renderer">Renderer </label>
+        <select
+            name="renderer"
+            v-model="renderStore.rendererDriver"
+            class="w-full border rounded-md bg-slate-900 border-gray-50"
+        >
+            <option
+                v-for="renderer in supportStore.rendererDrivers.value"
+                :key="renderer"
+                :value="renderer"
+            >
+                {{ renderer }}
+            </option>
+        </select>
 
-        <div>
-            <label for="rawHeader">rawHeader</label>
-            <textarea
-                name="rawHeader"
-                v-model="renderStore.renderingOptions.rawHeader"
-            ></textarea>
-        </div>
+        <!-- -------------- -->
 
-        <div>
-            <label for="rawFooter">rawFooter</label>
-            <textarea
-                name="rawFooter"
-                v-model="renderStore.renderingOptions.rawFooter"
-            ></textarea>
-        </div>
+        <label for="displayHeaderFooter">Display header and footer </label>
+        <input
+            type="checkbox"
+            name="displayHeaderFooter"
+            v-model="renderStore.renderingOptions.displayHeaderFooter"
+        />
 
-        <div>
-            <label for="printBackground">printBackground</label>
-            <input
-                type="radio"
-                name="printBackground"
-                v-model="renderStore.renderingOptions.printBackground"
-                :value="true"
-            />
-            <input
-                type="radio"
-                name="printBackground"
-                v-model="renderStore.renderingOptions.printBackground"
-                :value="false"
-            />
-        </div>
+        <!-- -------------- -->
 
-        <div>
-            <label for="preferCSSPageSize">preferCSSPageSize</label>
-            <input
-                type="radio"
-                name="preferCSSPageSize"
-                v-model="renderStore.renderingOptions.preferCSSPageSize"
-                :value="true"
-            />
-            <input
-                type="radio"
-                name="preferCSSPageSize"
-                v-model="renderStore.renderingOptions.preferCSSPageSize"
-                :value="false"
-            />
-        </div>
+        <textarea
+            name="rawHeader"
+            v-model="renderStore.renderingOptions.rawHeader"
+            class="w-full col-span-2 p-1 rounded-md bg-slate-800 text-gray-50 border-gray-50"
+        ></textarea>
 
-        <div>
-            <label for="perPage">perPage</label>
-            <input
-                type="number"
-                name="perPage"
-                v-model="renderStore.renderingOptions.perPage"
-            />
-        </div>
+        <textarea
+            name="rawFooter"
+            v-model="renderStore.renderingOptions.rawFooter"
+            class="w-full col-span-2 p-1 rounded-md bg-slate-800 text-gray-50 border-gray-50"
+        ></textarea>
 
-        <div>
-            <label for="landscape">landscape</label>
-            <input
-                type="radio"
-                name="landscape"
-                v-model="renderStore.renderingOptions.landscape"
-                :value="true"
-            />
-            <input
-                type="radio"
-                name="landscape"
-                v-model="renderStore.renderingOptions.landscape"
-                :value="false"
-            />
-        </div>
+        <!-- -------------- -->
+
+        <label for="printBackground">printBackground </label>
+        <input
+            type="checkbox"
+            name="printBackground"
+            v-model="renderStore.renderingOptions.printBackground"
+        />
+
+        <!-- -------------- -->
+
+        <label for="preferCSSPageSize">Prefer CSS page size </label>
+        <input
+            type="checkbox"
+            name="preferCSSPageSize"
+            v-model="renderStore.renderingOptions.preferCSSPageSize"
+        />
+
+        <!-- -------------- -->
+
+        <label for="perPage">Rows per page </label>
+        <input
+            type="number"
+            name="perPage"
+            v-model="renderStore.renderingOptions.perPage"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
+
+        <!-- -------------- -->
+
+        <label for="landscape">Landscape </label>
+        <input
+            type="checkbox"
+            name="landscape"
+            v-model="renderStore.renderingOptions.landscape"
+        />
+
+        <!-- -------------- -->
 
         <!-- TODO: format -->
         <!-- TODO: width -->
         <!-- TODO: height -->
 
-        <div>
-            <label for="margin">margin</label>
-            <input
-                type="text"
-                name="margin"
-                v-model="renderStore.renderingOptions.margin"
-            />
-        </div>
+        <label for="margin">Margin </label>
+        <input
+            type="text"
+            name="margin"
+            v-model="renderStore.renderingOptions.margin"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
 
-        <div>
-            <label for="metadataTitle">metadataTitle</label>
-            <input
-                type="text"
-                name="metadataTitle"
-                v-model="renderStore.renderingOptions.metadataTitle"
-            />
-        </div>
+        <!-- -------------- -->
 
-        <div>
-            <label for="metadataAuthor">metadataAuthor</label>
-            <input
-                type="text"
-                name="metadataAuthor"
-                v-model="renderStore.renderingOptions.metadataAuthor"
-            />
-        </div>
+        <label for="metadataTitle">File title (meta data) </label>
+        <input
+            type="text"
+            name="metadataTitle"
+            v-model="renderStore.renderingOptions.metadataTitle"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
 
-        <div>
-            <label for="metadataCreator">metadataCreator</label>
-            <input
-                type="text"
-                name="metadataCreator"
-                v-model="renderStore.renderingOptions.metadataCreator"
-            />
-        </div>
+        <!-- -------------- -->
 
-        <div>
-            <label for="metadataSubject">metadataSubject</label>
-            <input
-                type="text"
-                name="metadataSubject"
-                v-model="renderStore.renderingOptions.metadataSubject"
-            />
-        </div>
+        <label for="metadataAuthor">File author (meta data) </label>
+        <input
+            type="text"
+            name="metadataAuthor"
+            v-model="renderStore.renderingOptions.metadataAuthor"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
 
-        <div>
-            <label for="metadataKeywords">metadataKeywords</label>
-            <input
-                type="text"
-                name="metadataKeywords"
-                v-model="renderStore.renderingOptions.metadataKeywords"
-            />
-        </div>
+        <!-- -------------- -->
+
+        <label for="metadataCreator">File creator (meta data) </label>
+        <input
+            type="text"
+            name="metadataCreator"
+            v-model="renderStore.renderingOptions.metadataCreator"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
+
+        <!-- -------------- -->
+
+        <label for="metadataSubject">File subject (meta data) </label>
+        <input
+            type="text"
+            name="metadataSubject"
+            v-model="renderStore.renderingOptions.metadataSubject"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
+
+        <!-- -------------- -->
+
+        <label for="metadataKeywords">File keywords (meta data) </label>
+        <input
+            type="text"
+            name="metadataKeywords"
+            v-model="renderStore.renderingOptions.metadataKeywords"
+            class="w-full p-1 border rounded-md border-gray-50 bg-slate-800"
+        />
+
+        <!-- -------------- -->
     </form>
 </template>
+
 <script setup lang="ts">
 import useRenderStore from "@/stores/render";
 import useSupportStore from "@/stores/support";
