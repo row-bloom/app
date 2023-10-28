@@ -12,20 +12,19 @@
             </div>
         </div>
         <div class="flex items-center justify-center gap-4 p-4 py-2 border-t">
-            <RenderAction />
             <ParseTable />
+            <RenderAction />
+            <p>({{ renderStore.table.total }} row(s))</p>
         </div>
         <div class="h-[10%] min-h-[200px] flex flex-col">
-            <div class="w-full overflow-auto">
-                <DataTable
-                    :value="renderStore.table.data"
-                    tableStyle="min-width: 50rem"
-                >
+            <div class="w-full p-1 overflow-auto">
+                <DataTable :value="renderStore.table.data" :class="''">
                     <Column
                         v-for="col of columns"
                         :key="col"
                         :field="col"
                         :header="col"
+                        :class="'border p-1'"
                     ></Column>
                 </DataTable>
             </div>

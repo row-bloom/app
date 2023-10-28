@@ -2,7 +2,7 @@
     <form @submit.prevent="render">
         <button
             type="submit"
-            class="px-8 py-2 font-bold bg-gray-300 rounded-md text-slate-950"
+            class="px-8 py-2 font-bold bg-gray-200 rounded-md text-slate-950"
         >
             Render
         </button>
