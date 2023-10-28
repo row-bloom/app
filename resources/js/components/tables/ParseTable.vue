@@ -11,9 +11,9 @@
             </button>
         </form>
 
-        <div class="overflow-y-auto max-h-96">
+        <!-- <div class="overflow-y-auto max-h-96">
             <vue-json-pretty :data="renderStore.table" />
-        </div>
+        </div> -->
     </div>
 </template>
 
