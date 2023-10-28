@@ -11,11 +11,11 @@
                 <RenderingOptions />
             </div>
         </div>
-        <div class="flex items-center justify-center gap-4 py-2 border-t">
+        <div class="flex items-center justify-center gap-4 p-4 py-2 border-t">
             <RenderAction />
             <ParseTable />
         </div>
-        <div class="h-[10%] flex flex-col">
+        <div class="h-[10%] min-h-[200px] flex flex-col">
             <div class="w-full overflow-auto">
                 <table class="w-full text-sm">
                     <tr class="border-b">
