@@ -21,6 +21,7 @@
         "@codemirror/theme-one-dark": "^6.1.2",
         "@vitejs/plugin-vue": "^4.2.3",
         "pinia": "^2.1.6",
+        "primevue": "^3.38.1",
         "puppeteer": "^21.1.1",
         "vue": "^3.2.36",
         "vue-codemirror": "^6.1.1",
