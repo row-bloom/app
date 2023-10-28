@@ -22,12 +22,10 @@ const { getRootProps, getInputProps, ...rest } = useDropzone({
     multiple: false,
 });
 
-const url = "/api/read-table-content";
-
 function onDrop(acceptFile: File[], rejectReasons: string[]) {
-    console.log(acceptFile);
+    // console.log(acceptFile);
 
-    saveFile(acceptFile); // saveFiles as callback
+    saveFile(acceptFile);
 
     if (rejectReasons.length) {
         console.error(rejectReasons);
@@ -39,9 +37,9 @@ function saveFile(file: File[]) {
     formData.append("table", file[0]);
 
     axios
-        .post(url, formData)
+        .post("/api/read-table-content", formData)
         .then((response) => {
-            console.info(response.data);
+            // console.table(response.data);
             renderStore.appendToTable(response.data);
         })
         .catch((err) => {
