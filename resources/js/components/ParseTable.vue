@@ -30,7 +30,7 @@ const { getRootProps, getInputProps, ...rest } = useDropzone({
 });
 
 function onDrop(acceptFile: File[], rejectReasons: string[]) {
-    console.log(acceptFile);
+    // console.log(acceptFile);
 
     saveFile(acceptFile);
 

@@ -12,18 +12,21 @@ use RowBloom\RowBloom\Config;
 
 class RenderController
 {
-    public function __invoke(Request $request, RowBloom $rowBloom, Support $support): HttpResponse
+    public function __construct(private RowBloom $rowBloom, private Support $support) {
+    }
+
+    public function __invoke(Request $request): HttpResponse
     {
-        $request->validate([
+        $params = $request->validate([
             'interpolatorDriver' => [
                 'required',
                 'string',
-                Rule::in(array_keys($support->getInterpolatorDrivers())),
+                Rule::in(array_keys($this->support->getInterpolatorDrivers())),
             ],
             'rendererDriver' => [
                 'required',
                 'string',
-                Rule::in(array_keys($support->getRendererDrivers())),
+                Rule::in(array_keys($this->support->getRendererDrivers())),
             ],
             'template' => ['required', 'string'],
             'css' => ['required', 'string'],
@@ -33,27 +36,32 @@ class RenderController
         ]);
 
         $config = (new Config)->setChromePath('C:\Program Files\Google\Chrome\Application\Chrome.exe');
+        $this->rowBloom->setConfig($config);
 
-        $rowBloom->setConfig($config);
-
-        $rowBloom->setInterpolator($support->getInterpolatorDrivers()[$request->interpolatorDriver])
-            ->setRenderer($support->getRendererDrivers()[$request->rendererDriver]);
-
-        $rowBloom->addTable($request->table);
-        $rowBloom->setTemplate($request->template);
-        $rowBloom->addCss($request->css);
-
-        foreach ($request->options as $option => $value) {
-            $rowBloom->setOption($option, $value);
-        }
+        $this->setFromArray($params);
 
         return Response::make(
-            $rowBloom->get(),
+            $this->rowBloom->get(),
             200,
             [
                 'Content-Type' => 'application/pdf',
                 'Content-Disposition' => 'inline; filename="document.pdf"',
             ]
         );
+    }
+
+    private function setFromArray(array $params): void
+    {
+        $this->rowBloom
+            ->setInterpolator($params['interpolatorDriver'])
+            ->setRenderer($params['rendererDriver']);
+
+        $this->rowBloom->addTable($params['table']);
+        $this->rowBloom->setTemplate($params['template']);
+        $this->rowBloom->addCss($params['css']);
+
+        foreach ($params['options'] as $option => $value) {
+            $this->rowBloom->setOption($option, $value);
+        }
     }
 }
