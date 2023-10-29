@@ -12,7 +12,7 @@ class SupportController
             'dataLoaderDrivers' => array_keys($support->getDataLoaderDrivers()),
             'interpolatorDrivers' => array_keys($support->getInterpolatorDrivers()),
             'rendererDrivers' => array_keys($support->getRendererDrivers()),
-            'supportedTableFileExtensions' => $support->getSupportedTableFileExtensions(),
+            'supportedTableFileExtensions' => array_keys($support->getSupportedTableFileExtensions()),
             'rendererOptionsSupport' => array_reduce(
                 array_keys($support->getRendererDrivers()),
                 fn(array $carry, string $driverName): array => $carry
