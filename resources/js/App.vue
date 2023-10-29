@@ -14,7 +14,7 @@
         <div class="flex items-center justify-center gap-4 p-4 py-2 border-t">
             <ParseTable />
             <RenderAction />
-            <p>({{ renderStore.table.total }} row(s))</p>
+            <p>{{ renderStore.table.total }} row(s)</p>
         </div>
         <div class="h-[10%] min-h-[200px] flex flex-col">
             <div class="w-full p-1 overflow-auto">
@@ -41,9 +41,9 @@ import { computed } from "vue";
 import useSupportStore from "@/stores/support";
 import HtmlEditor from "@/components/editors/HtmlEditor.vue";
 import CssEditor from "@/components/editors/CssEditor.vue";
-import RenderAction from "@/components/render/RenderAction.vue";
-import RenderingOptions from "@/components/options/RenderingOptions.vue";
-import ParseTable from "@/components/tables/ParseTable.vue";
+import RenderAction from "@/components/RenderAction.vue";
+import RenderingOptions from "@/components/RenderingOptions.vue";
+import ParseTable from "@/components/ParseTable.vue";
 
 import useRenderStore from "@/stores/render";
 

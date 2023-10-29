@@ -27,14 +27,10 @@ const supportStore = useSupportStore();
 const { getRootProps, getInputProps, ...rest } = useDropzone({
     onDrop,
     multiple: false,
-    // ! supportedTableFileExtensions isn't ready onMount
-    accept: (supportStore.supportedTableFileExtensions.value ?? []).map(
-        (ext: string) => "." + ext
-    ),
 });
 
 function onDrop(acceptFile: File[], rejectReasons: string[]) {
-    // console.log(acceptFile);
+    console.log(acceptFile);
 
     saveFile(acceptFile);
 

@@ -4141,12 +4141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/chrome-php-renderer.git",
-                "reference": "124ceef64d067162fa7e33688cf82a78691380cd"
+                "reference": "51794ec3e5a1bd488c357462851b61f23ad2bad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/chrome-php-renderer/zipball/124ceef64d067162fa7e33688cf82a78691380cd",
-                "reference": "124ceef64d067162fa7e33688cf82a78691380cd",
+                "url": "https://api.github.com/repos/row-bloom/chrome-php-renderer/zipball/51794ec3e5a1bd488c357462851b61f23ad2bad9",
+                "reference": "51794ec3e5a1bd488c357462851b61f23ad2bad9",
                 "shasum": ""
             },
             "require": {
@@ -4156,9 +4156,7 @@
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "mockery/mockery": "^1.6",
                 "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
                 "pestphp/pest-plugin-laravel": "^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -4193,7 +4191,7 @@
                 "issues": "https://github.com/row-bloom/chrome-php-renderer/issues",
                 "source": "https://github.com/row-bloom/chrome-php-renderer/tree/main"
             },
-            "time": "2023-10-26T21:40:15+00:00"
+            "time": "2023-10-28T11:24:41+00:00"
         },
         {
             "name": "row-bloom/mpdf-renderer",
@@ -4201,12 +4199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/mpdf-renderer.git",
-                "reference": "5035b3734d68b8cf17cc78eb717c4aac4ff7e909"
+                "reference": "35445c6fee25808984b0543c11121deb58bc0c08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/mpdf-renderer/zipball/5035b3734d68b8cf17cc78eb717c4aac4ff7e909",
-                "reference": "5035b3734d68b8cf17cc78eb717c4aac4ff7e909",
+                "url": "https://api.github.com/repos/row-bloom/mpdf-renderer/zipball/35445c6fee25808984b0543c11121deb58bc0c08",
+                "reference": "35445c6fee25808984b0543c11121deb58bc0c08",
                 "shasum": ""
             },
             "require": {
@@ -4216,9 +4214,7 @@
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "mockery/mockery": "^1.6",
                 "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
                 "pestphp/pest-plugin-laravel": "^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -4253,7 +4249,7 @@
                 "issues": "https://github.com/row-bloom/mpdf-renderer/issues",
                 "source": "https://github.com/row-bloom/mpdf-renderer/tree/main"
             },
-            "time": "2023-10-26T21:38:49+00:00"
+            "time": "2023-10-28T10:57:22+00:00"
         },
         {
             "name": "row-bloom/row-bloom",
@@ -4261,12 +4257,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/row-bloom.git",
-                "reference": "d6df164c01663ddbead86ce0a01f195c07d301ad"
+                "reference": "39db7c4603914c08f6b2799a3990a5b0eeb8ef2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/d6df164c01663ddbead86ce0a01f195c07d301ad",
-                "reference": "d6df164c01663ddbead86ce0a01f195c07d301ad",
+                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/39db7c4603914c08f6b2799a3990a5b0eeb8ef2a",
+                "reference": "39db7c4603914c08f6b2799a3990a5b0eeb8ef2a",
                 "shasum": ""
             },
             "require": {
@@ -4313,7 +4309,7 @@
                 "issues": "https://github.com/row-bloom/row-bloom/issues",
                 "source": "https://github.com/row-bloom/row-bloom/tree/main"
             },
-            "time": "2023-10-27T15:47:18+00:00"
+            "time": "2023-10-28T12:30:24+00:00"
         },
         {
             "name": "row-bloom/spreadsheet-data-loader",
@@ -4321,12 +4317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/spreadsheet-data-loader.git",
-                "reference": "9d324a2e77754252e75cfc69fd49a6e54c4c0fe6"
+                "reference": "1514bb172c6403b6d27f01d234ba7be6a7992775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/spreadsheet-data-loader/zipball/9d324a2e77754252e75cfc69fd49a6e54c4c0fe6",
-                "reference": "9d324a2e77754252e75cfc69fd49a6e54c4c0fe6",
+                "url": "https://api.github.com/repos/row-bloom/spreadsheet-data-loader/zipball/1514bb172c6403b6d27f01d234ba7be6a7992775",
+                "reference": "1514bb172c6403b6d27f01d234ba7be6a7992775",
                 "shasum": ""
             },
             "require": {
@@ -4336,9 +4332,7 @@
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "mockery/mockery": "^1.6",
                 "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
                 "pestphp/pest-plugin-laravel": "^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -4373,7 +4367,7 @@
                 "issues": "https://github.com/row-bloom/spreadsheet-data-loader/issues",
                 "source": "https://github.com/row-bloom/spreadsheet-data-loader/tree/main"
             },
-            "time": "2023-10-27T15:34:23+00:00"
+            "time": "2023-10-28T10:34:53+00:00"
         },
         {
             "name": "row-bloom/twig-interpolator",
@@ -4381,12 +4375,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/twig-interpolator.git",
-                "reference": "24ec9cb9237d518516fa302f27d73435115b84fc"
+                "reference": "327be60075b728c6fa1090ee708e15e1140a7ff5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/twig-interpolator/zipball/24ec9cb9237d518516fa302f27d73435115b84fc",
-                "reference": "24ec9cb9237d518516fa302f27d73435115b84fc",
+                "url": "https://api.github.com/repos/row-bloom/twig-interpolator/zipball/327be60075b728c6fa1090ee708e15e1140a7ff5",
+                "reference": "327be60075b728c6fa1090ee708e15e1140a7ff5",
                 "shasum": ""
             },
             "require": {
@@ -4396,9 +4390,7 @@
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "mockery/mockery": "^1.6",
                 "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
                 "pestphp/pest-plugin-laravel": "^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -4433,7 +4425,7 @@
                 "issues": "https://github.com/row-bloom/twig-interpolator/issues",
                 "source": "https://github.com/row-bloom/twig-interpolator/tree/main"
             },
-            "time": "2023-10-26T21:18:49+00:00"
+            "time": "2023-10-28T10:23:52+00:00"
         },
         {
             "name": "setasign/fpdi",
