@@ -1,10 +1,15 @@
 <template>
     <div
-        class="flex-1 p-2 border-2 border-white border-dashed rounded-md cursor-pointer"
+        class="flex-1 p-2 border-2 border-white border-dashed rounded-md cursor-pointer bg-slate-800"
     >
         <div v-bind="getRootProps()">
             <input v-bind="getInputProps()" />
-            <p>Drop the files here ...</p>
+            <p>
+                Drop data files here ...
+                {{
+                    supportStore.supportedTableFileExtensions.value?.join(", ")
+                }}
+            </p>
         </div>
     </div>
 </template>
@@ -14,12 +19,18 @@ import axios from "axios";
 import { useDropzone } from "vue3-dropzone";
 
 import useRenderStore from "@/stores/render";
+import useSupportStore from "@/stores/support";
 
 const renderStore = useRenderStore();
+const supportStore = useSupportStore();
 
 const { getRootProps, getInputProps, ...rest } = useDropzone({
     onDrop,
     multiple: false,
+    // ! supportedTableFileExtensions isn't ready onMount
+    accept: (supportStore.supportedTableFileExtensions.value ?? []).map(
+        (ext: string) => "." + ext
+    ),
 });
 
 function onDrop(acceptFile: File[], rejectReasons: string[]) {

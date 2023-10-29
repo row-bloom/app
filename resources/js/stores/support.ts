@@ -7,7 +7,7 @@ const useSupportStore = defineStore("support", () => {
         const dataLoaderDrivers = reactive<any>([]);
         const interpolatorDrivers = reactive<any>([]);
         const rendererDrivers = reactive<any>([]);
-        const supportedTableFileExtensions = reactive<any>({});
+        const supportedTableFileExtensions = reactive<any>([]);
         const rendererOptionsSupport = reactive<any>({});
 
         function init() {
