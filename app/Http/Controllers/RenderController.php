@@ -9,6 +9,7 @@ use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Validation\Rule;
 use RowBloom\RowBloom\Config;
+use RowBloom\RowBloom\Options;
 
 class RenderController
 {
@@ -35,8 +36,9 @@ class RenderController
             'options' => ['required', 'array'],
         ]);
 
-        $config = (new Config)->setChromePath('C:\Program Files\Google\Chrome\Application\Chrome.exe');
-        $this->rowBloom->setConfig($config);
+        $this->rowBloom->tapConfig(function (Config $config) {
+            $config->chromePath = 'C:\Program Files\Google\Chrome\Application\Chrome.exe';
+        });
 
         $this->setFromArray($params);
 
@@ -61,7 +63,8 @@ class RenderController
         $this->rowBloom->addCss($params['css']);
 
         foreach ($params['options'] as $option => $value) {
-            $this->rowBloom->setOption($option, $value);
+            $this->rowBloom
+                ->tapOptions(fn(Options $options) => $options->$option = $value);
         }
     }
 }
