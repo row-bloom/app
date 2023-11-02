@@ -1300,16 +1300,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.29.0",
+            "version": "v10.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2d002849a16ad131110a50cbea4d64dbb78515a3"
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2d002849a16ad131110a50cbea4d64dbb78515a3",
-                "reference": "2d002849a16ad131110a50cbea4d64dbb78515a3",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
                 "shasum": ""
             },
             "require": {
@@ -1498,20 +1498,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-10-24T13:48:53+00:00"
+            "time": "2023-11-01T13:52:17+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.12",
+            "version": "v0.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "b35f249028c22016e45e48626e19e5d42fd827ff"
+                "reference": "e1379d8ead15edd6cc4369c22274345982edc95a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/b35f249028c22016e45e48626e19e5d42fd827ff",
-                "reference": "b35f249028c22016e45e48626e19e5d42fd827ff",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/e1379d8ead15edd6cc4369c22274345982edc95a",
+                "reference": "e1379d8ead15edd6cc4369c22274345982edc95a",
                 "shasum": ""
             },
             "require": {
@@ -1553,9 +1553,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.12"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.13"
             },
-            "time": "2023-10-18T14:18:57+00:00"
+            "time": "2023-10-27T13:53:59+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -4081,12 +4081,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/browsershot-renderer.git",
-                "reference": "aeb943e2eb7753d322b054e1c9b6bcb05b6e0e7d"
+                "reference": "f622ba11e148c5b74c84db53952f5131c700b654"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/browsershot-renderer/zipball/aeb943e2eb7753d322b054e1c9b6bcb05b6e0e7d",
-                "reference": "aeb943e2eb7753d322b054e1c9b6bcb05b6e0e7d",
+                "url": "https://api.github.com/repos/row-bloom/browsershot-renderer/zipball/f622ba11e148c5b74c84db53952f5131c700b654",
+                "reference": "f622ba11e148c5b74c84db53952f5131c700b654",
                 "shasum": ""
             },
             "require": {
@@ -4133,7 +4133,7 @@
                 "issues": "https://github.com/row-bloom/browsershot-renderer/issues",
                 "source": "https://github.com/row-bloom/browsershot-renderer/tree/main"
             },
-            "time": "2023-10-30T21:12:06+00:00"
+            "time": "2023-11-02T18:46:21+00:00"
         },
         {
             "name": "row-bloom/chrome-php-renderer",
@@ -4141,12 +4141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/chrome-php-renderer.git",
-                "reference": "3f7ba271f99ce797312dce2e1330da67ed2e04f6"
+                "reference": "e723f35eafdddf7290ed8c071666afa453981b18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/chrome-php-renderer/zipball/3f7ba271f99ce797312dce2e1330da67ed2e04f6",
-                "reference": "3f7ba271f99ce797312dce2e1330da67ed2e04f6",
+                "url": "https://api.github.com/repos/row-bloom/chrome-php-renderer/zipball/e723f35eafdddf7290ed8c071666afa453981b18",
+                "reference": "e723f35eafdddf7290ed8c071666afa453981b18",
                 "shasum": ""
             },
             "require": {
@@ -4191,7 +4191,7 @@
                 "issues": "https://github.com/row-bloom/chrome-php-renderer/issues",
                 "source": "https://github.com/row-bloom/chrome-php-renderer/tree/main"
             },
-            "time": "2023-10-30T21:08:50+00:00"
+            "time": "2023-11-02T18:49:58+00:00"
         },
         {
             "name": "row-bloom/mpdf-renderer",
@@ -4199,12 +4199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/mpdf-renderer.git",
-                "reference": "e991710faa6ef8545650200c92e929e12f48d92a"
+                "reference": "3d8af4909affb57beccf8b15b02a605c2e144916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/mpdf-renderer/zipball/e991710faa6ef8545650200c92e929e12f48d92a",
-                "reference": "e991710faa6ef8545650200c92e929e12f48d92a",
+                "url": "https://api.github.com/repos/row-bloom/mpdf-renderer/zipball/3d8af4909affb57beccf8b15b02a605c2e144916",
+                "reference": "3d8af4909affb57beccf8b15b02a605c2e144916",
                 "shasum": ""
             },
             "require": {
@@ -4249,7 +4249,7 @@
                 "issues": "https://github.com/row-bloom/mpdf-renderer/issues",
                 "source": "https://github.com/row-bloom/mpdf-renderer/tree/main"
             },
-            "time": "2023-10-30T21:06:11+00:00"
+            "time": "2023-11-02T18:46:50+00:00"
         },
         {
             "name": "row-bloom/row-bloom",
@@ -4257,12 +4257,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/row-bloom.git",
-                "reference": "edd241f5fa9c7fd3b1be9fd69ca5d17fb0c5eb0a"
+                "reference": "d8c3049d4dad2b32fe1a8200bb41110ae9db6d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/edd241f5fa9c7fd3b1be9fd69ca5d17fb0c5eb0a",
-                "reference": "edd241f5fa9c7fd3b1be9fd69ca5d17fb0c5eb0a",
+                "url": "https://api.github.com/repos/row-bloom/row-bloom/zipball/d8c3049d4dad2b32fe1a8200bb41110ae9db6d68",
+                "reference": "d8c3049d4dad2b32fe1a8200bb41110ae9db6d68",
                 "shasum": ""
             },
             "require": {
@@ -4309,7 +4309,7 @@
                 "issues": "https://github.com/row-bloom/row-bloom/issues",
                 "source": "https://github.com/row-bloom/row-bloom/tree/main"
             },
-            "time": "2023-10-30T21:01:29+00:00"
+            "time": "2023-11-02T15:11:56+00:00"
         },
         {
             "name": "row-bloom/spreadsheet-data-loader",
@@ -4317,12 +4317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/spreadsheet-data-loader.git",
-                "reference": "f7f9f0873ec39078565e1851e0eb8a8d39da9ee4"
+                "reference": "421648c7eb765d46b77f836b7dbbd9dd26551326"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/spreadsheet-data-loader/zipball/f7f9f0873ec39078565e1851e0eb8a8d39da9ee4",
-                "reference": "f7f9f0873ec39078565e1851e0eb8a8d39da9ee4",
+                "url": "https://api.github.com/repos/row-bloom/spreadsheet-data-loader/zipball/421648c7eb765d46b77f836b7dbbd9dd26551326",
+                "reference": "421648c7eb765d46b77f836b7dbbd9dd26551326",
                 "shasum": ""
             },
             "require": {
@@ -4367,7 +4367,7 @@
                 "issues": "https://github.com/row-bloom/spreadsheet-data-loader/issues",
                 "source": "https://github.com/row-bloom/spreadsheet-data-loader/tree/main"
             },
-            "time": "2023-10-30T21:04:44+00:00"
+            "time": "2023-11-02T18:32:05+00:00"
         },
         {
             "name": "row-bloom/twig-interpolator",
@@ -4375,17 +4375,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/row-bloom/twig-interpolator.git",
-                "reference": "8f999795ac67b1cc4469f69d61573eb6e19708a4"
+                "reference": "6d37ba6288b8860e5c39c43305fc70a373754b1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/row-bloom/twig-interpolator/zipball/8f999795ac67b1cc4469f69d61573eb6e19708a4",
-                "reference": "8f999795ac67b1cc4469f69d61573eb6e19708a4",
+                "url": "https://api.github.com/repos/row-bloom/twig-interpolator/zipball/6d37ba6288b8860e5c39c43305fc70a373754b1c",
+                "reference": "6d37ba6288b8860e5c39c43305fc70a373754b1c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/container": "*",
-                "php": "^8.1",
                 "twig/twig": "^3.6"
             },
             "require-dev": {
@@ -4425,7 +4423,7 @@
                 "issues": "https://github.com/row-bloom/twig-interpolator/issues",
                 "source": "https://github.com/row-bloom/twig-interpolator/tree/main"
             },
-            "time": "2023-10-30T21:15:34+00:00"
+            "time": "2023-11-02T18:30:35+00:00"
         },
         {
             "name": "setasign/fpdi",

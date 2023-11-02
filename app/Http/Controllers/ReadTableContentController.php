@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use RowBloom\RowBloom\DataLoaders\DataLoaderFactory;
-use RowBloom\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use RowBloom\RowBloom\Fs\File;
+use RowBloom\RowBloom\DataLoaders\DataLoaderFactory;
+use RowBloom\RowBloom\Support;
+use RowBloom\RowBloom\Types\TableLocation;
 
 class ReadTableContentController
 {
+    public function __construct(private DataLoaderFactory $dataLoaderFactory)
+    {
+
+    }
+
     public function __invoke(Request $request, Support $support): array
     {
         $request->validate([
@@ -24,15 +29,13 @@ class ReadTableContentController
 
         $storedName = time().'.'.$tmpFile->getClientOriginalExtension();
 
-        $tmpFile->storeAs(
-            '',
-            $storedName,
-            'local'
-        );
+        $tmpFile->storeAs('', $storedName, 'local');
 
-        $table = app()->get(DataLoaderFactory::class)
-            ->makeFromPath(storage_path('app/'.$storedName))
-            ->getTable(new File(storage_path('app/'.$storedName)))
+        $tableLocation = TableLocation::make(storage_path('app/'.$storedName));
+
+        $table = $this->dataLoaderFactory
+            ->makeFromLocation($tableLocation)
+            ->getTable($tableLocation)
             ->toArray();
 
         Storage::disk('local')->delete($storedName);

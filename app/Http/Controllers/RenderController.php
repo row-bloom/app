@@ -2,29 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use RowBloom\RowBloom\RowBloom;
-use RowBloom\RowBloom\Support;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Validation\Rule;
 use RowBloom\RowBloom\Config;
-use RowBloom\RowBloom\Options;
+use RowBloom\RowBloom\RowBloom;
+use RowBloom\RowBloom\Support;
 
 class RenderController
 {
-    public function __construct(private RowBloom $rowBloom, private Support $support) {
+    public function __construct(private RowBloom $rowBloom, private Support $support)
+    {
     }
 
     public function __invoke(Request $request): HttpResponse
     {
         $params = $request->validate([
-            'interpolatorDriver' => [
+            'interpolator' => [
                 'required',
                 'string',
                 Rule::in(array_keys($this->support->getInterpolatorDrivers())),
             ],
-            'rendererDriver' => [
+            'renderer' => [
                 'required',
                 'string',
                 Rule::in(array_keys($this->support->getRendererDrivers())),
@@ -36,35 +36,16 @@ class RenderController
             'options' => ['required', 'array'],
         ]);
 
-        $this->rowBloom->tapConfig(function (Config $config) {
-            $config->chromePath = 'C:\Program Files\Google\Chrome\Application\Chrome.exe';
-        });
+        $rendering = $this->rowBloom
+            ->setFromArray($params)
+            ->tapConfig(function (Config $config) {
+                $config->chromePath = 'C:\Program Files\Google\Chrome\Application\Chrome.exe';
+            })
+            ->get();
 
-        $this->setFromArray($params);
-
-        return Response::make(
-            $this->rowBloom->get(),
-            200,
-            [
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="document.pdf"',
-            ]
-        );
-    }
-
-    private function setFromArray(array $params): void
-    {
-        $this->rowBloom
-            ->setInterpolator($params['interpolatorDriver'])
-            ->setRenderer($params['rendererDriver']);
-
-        $this->rowBloom->addTable($params['table']);
-        $this->rowBloom->setTemplate($params['template']);
-        $this->rowBloom->addCss($params['css']);
-
-        foreach ($params['options'] as $option => $value) {
-            $this->rowBloom
-                ->tapOptions(fn(Options $options) => $options->$option = $value);
-        }
+        return Response::make($rendering, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="document.pdf"',
+        ]);
     }
 }

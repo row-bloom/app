@@ -3,8 +3,8 @@ import { defineStore } from "pinia";
 import { computed, reactive, ref } from "vue";
 
 const useRenderStore = defineStore("render", () => {
-    const interpolatorDriver = ref(null);
-    const rendererDriver = ref(null);
+    const interpolator = ref(null);
+    const renderer = ref(null);
 
     const css = ref("");
     const cssCopy = computed(() => css.value);
@@ -53,8 +53,8 @@ const useRenderStore = defineStore("render", () => {
     }
 
     return {
-        interpolatorDriver,
-        rendererDriver,
+        interpolator,
+        renderer,
         css,
         cssCopy,
         setCss,

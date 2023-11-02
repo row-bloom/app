@@ -18,8 +18,8 @@ const renderStore = useRenderStore();
 function render() {
     axios
         .post("/api/render", {
-            interpolatorDriver: renderStore.interpolatorDriver,
-            rendererDriver: renderStore.rendererDriver,
+            interpolator: renderStore.interpolator,
+            renderer: renderStore.renderer,
             css: renderStore.css,
             template: renderStore.template,
             table: renderStore.table.data,

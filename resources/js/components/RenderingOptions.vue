@@ -7,7 +7,7 @@
         <label for="interpolator">Interpolator </label>
         <select
             name="interpolator"
-            v-model="renderStore.interpolatorDriver"
+            v-model="renderStore.interpolator"
             class="w-full border rounded-md bg-slate-900 border-gray-50"
         >
             <option
@@ -24,7 +24,7 @@
         <label for="renderer">Renderer </label>
         <select
             name="renderer"
-            v-model="renderStore.rendererDriver"
+            v-model="renderStore.renderer"
             class="w-full border rounded-md bg-slate-900 border-gray-50"
         >
             <option
