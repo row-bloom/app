@@ -12,7 +12,6 @@ class ReadTableContentController
 {
     public function __construct(private DataLoaderFactory $dataLoaderFactory)
     {
-
     }
 
     public function __invoke(Request $request, Support $support): array

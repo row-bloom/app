@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use RowBloom\RowBloom\Support;
 use Illuminate\Console\Command;
+use RowBloom\RowBloom\Support;
 
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\select;
@@ -70,7 +70,7 @@ class BloomCommand extends Command
         do {
             $path = text('Add CSS path (empty input to skip)');
 
-            if ('' === $path) {
+            if ($path === '') {
                 break;
             }
 
@@ -88,7 +88,7 @@ class BloomCommand extends Command
         do {
             $path = text('Add table path (empty input to skip)');
 
-            if ('' === $path) {
+            if ($path === '') {
                 break;
             }
 
@@ -123,8 +123,8 @@ class BloomCommand extends Command
             $this->support->getRendererDrivers()[$this->rendererDriver]
         );
 
-        foreach($options as $name => $supported) {
-            if(!$supported) {
+        foreach ($options as $name => $supported) {
+            if (! $supported) {
                 continue;
             }
 
