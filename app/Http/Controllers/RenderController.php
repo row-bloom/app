@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Validation\Rule;
+use RowBloom\BrowsershotRenderer\BrowsershotConfig;
+use RowBloom\ChromePhpRenderer\ChromePhpConfig;
 use RowBloom\RowBloom\Config;
 use RowBloom\RowBloom\RowBloom;
 use RowBloom\RowBloom\Support;
@@ -39,7 +41,8 @@ class RenderController
         $rendering = $this->rowBloom
             ->setFromArray($params)
             ->tapConfig(function (Config $config) {
-                $config->chromePath = 'C:\Program Files\Google\Chrome\Application\Chrome.exe';
+                $config->setDriverConfig(new ChromePhpConfig(chromePath: 'C:\Program Files\Google\Chrome\Application\Chrome.exe'))
+                    ->setDriverConfig(new BrowsershotConfig(chromePath: 'C:\Program Files\Google\Chrome\Application\Chrome.exe'));
             })
             ->get();
 

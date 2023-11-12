@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use RowBloom\RowBloom\DataLoaders\DataLoaderFactory;
+use RowBloom\RowBloom\DataLoaders\Factory as DataLoadersFactory;
 use RowBloom\RowBloom\Support;
 use RowBloom\RowBloom\Types\TableLocation;
 
 class ReadTableContentController
 {
-    public function __construct(private DataLoaderFactory $dataLoaderFactory)
+    public function __construct(private DataLoadersFactory $dataLoadersFactory)
     {
     }
 
@@ -32,7 +32,7 @@ class ReadTableContentController
 
         $tableLocation = TableLocation::make(storage_path('app/'.$storedName));
 
-        $table = $this->dataLoaderFactory
+        $table = $this->dataLoadersFactory
             ->makeFromLocation($tableLocation)
             ->getTable($tableLocation)
             ->toArray();
